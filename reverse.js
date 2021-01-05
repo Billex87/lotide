@@ -1,11 +1,11 @@
-const args = process.argv.slice(2);
-function reverseString(str) {
-  var newString = "";
-  for (var i = str.length - 1; i >= 0; i--) {
-      newString += str[i];
-  }
+const args2 = process.argv.slice(2);
+let string = '';
 
-  return newString;
+for (let i = 0; i < args2.length; i++) {
+  for (let j = (args2[i].length - 1); j >= 0; j--) {
+    string += args2[i][j];
+  }
+  string += '\n';
 }
-let result = reverseString('hello goodbye');
-console.log(result);
+
+console.log(string.trim());
