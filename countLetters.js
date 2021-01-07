@@ -21,3 +21,5 @@ const countLetters = function(sentence) {
 };
 
 console.log(countLetters('lighthouse labs'));
+
+//fuck git hub
