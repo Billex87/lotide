@@ -23,12 +23,12 @@ const countOnly = function(allItems, itemsToCount) {
     } 
   }
 
-
+  return result;
+};
 
 //   for(let value of allItems) {
 //   console.log(itemsToCount[value])
-return result;
-};
+
 
 
 
