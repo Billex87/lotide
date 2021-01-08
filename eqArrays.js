@@ -21,4 +21,8 @@ const eqArrays = function(array1, array2) {
 };
 
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+// console.log(`Example label: ${inspect(actual)}`);
+console.log(eqObjects(ab, ab));
+console.log(eqObjects(ab, ba)); 
+assertEqual(eqObjects(ab, ab), true);
+assertEqual(eqObjects(ab, ba), false)
