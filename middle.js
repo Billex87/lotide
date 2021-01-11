@@ -1,34 +1,35 @@
+const middle = function (arr){
+  let middleElements = [];
+  //1 or 2 elements return empty
+  //odd elements return middle
+  //even arrays return 2 of the middle
 
-const assertArraysEqual = function(array1, array2) {
-  if (eqArrays(array1, array2)) {
-    console.log(`✅✅✅ Assertion Passed: ${array1} === ${array2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${array1} !== ${array2}`);
-  }
-};
-
-
-const middle = function(array) {
-  let midArray = [];
-  let midPoint = Math.floor(array.length / 2)
-  if (array.length > 2) {
-    // console.log('TEST: array contains more than 2 elements')
-    if (array.length % 2 === 0) {
-      console.log('TEST: array is divisible by 2 [' + array + ']')
-      midArray.push(array[midPoint-1], array[midPoint])
-    } else {
-      console.log('TEST: array is not divisible by 2 [' + array + ']')
-      midArray.push(array[midPoint]);
-
+  //figure out if array is odd or even
+  if (arr.length % 2 !== 0 && (arr.length / 2) > 1){
+    for(let i = 0; i < arr.length; i++){
+      if (i === parseInt(arr.length/ 2)){
+        middleElements.push(arr[i]);
+        break;
+      }
+    }
+  } else if (arr.length % 2 === 0 && (arr.length / 2) > 2) {
+    for(let i = 0; i < arr.length; i++){
+      if (i === arr.length/ 2){
+        middleElements.push(arr[i-1],arr[i]);
+        break;
+      }
     }
   }
-  return midArray;
+
+  return middleElements;
+  //divide even arrays by 2 if the answer is > 1 then return empty array
+  //if the answer is greater than one add the element at that index and the next one to middle elements
+  //loop through elements find the middle index
+  //return array
 }
 
-// test driver code
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+// console.log(middle([1])) ;// => [2, 3]
+// console.log(middle([1, 2]));
+// console.log(middle([1, 2, 3])); // => [2]
+// console.log(middle([1, 2, 3, 4, 5,6]))// => [3]
+module.exports = middle;
